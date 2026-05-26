@@ -1,0 +1,15 @@
+base_url = "https://kotek.net"
+title = "Jan Kotek"
+description = "Jan Kotek's personal website, blog archive, publications, and contact information."
+default_language = "en"
+compile_sass = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+build_search_index = false
+
+[markdown]
+smart_punctuation = true
+
+[extra]
+author = "Jan Kotek"
+repo_url = "https://codeberg.org/jankotek/kotek.net"

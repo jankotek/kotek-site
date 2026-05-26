@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<article class="page">
+  {% if page.extra.render_title | default(value=true) %}
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+  {% endif %}
+
+  {% if page.date %}
+  <p class="meta">
+    <time datetime="{{ page.date }}">{{ page.date | date(format='%B %d, %Y') }}</time>
+  </p>
+  {% endif %}
+
+  {{ page.content | safe }}
+</article>
+{% endblock %}
