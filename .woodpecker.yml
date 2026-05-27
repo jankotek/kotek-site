@@ -25,5 +25,5 @@ steps:
       - cp ../.domains .
       - git add -A
       - git commit -q -m "build $CI_COMMIT_SHA"
-      - git remote add origin git@codeberg.org:jankotek/kotek.net.git
+      - git remote add origin git@codeberg.org:jankotek/kotek-net.git
       - git push -f origin pages
