@@ -17,7 +17,8 @@ steps:
       - mkdir -p ~/.ssh && chmod 700 ~/.ssh
       - echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
-      - ssh-keyscan codeberg.org >> ~/.ssh/known_hosts
+      - echo 'codeberg.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVIC02vnjFyL+I4RHfvIGNtOgJMe769VTF1VR4EB3ZB' > ~/.ssh/known_hosts
+      - ssh-keygen -F codeberg.org -f ~/.ssh/known_hosts >/dev/null
       - cd public
       - git init -q -b pages
       - git config user.email "ci@kotek.net"
