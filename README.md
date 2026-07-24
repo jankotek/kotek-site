@@ -20,6 +20,15 @@ The old PHP site is kept under `oldsite/kotek.net/www`. Regenerate migrated cont
 
 The migration preserves legacy blog slugs such as `/blog/MapDB_update/`.
 
-## Deploy
+## Deploy (GitHub Pages)
 
-The Woodpecker pipeline builds with Zola and force-pushes `public/` to the `pages` branch. Set a private SSH deploy key in Woodpecker as the `deploy_key` secret, and make sure the deploy key has write access to `codeberg.org:jankotek/kotek.net.git`.
+Hosted on GitHub Pages via GitHub Actions. Every push to `main` runs
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the
+site with Zola 0.22.1 and publishes it to the `github-pages` environment.
+There is no `pages` branch to maintain.
+
+The custom domain (`kotek.net`) is set in the repository's **Settings -> Pages**.
+DNS: point the apex `kotek.net` at GitHub Pages (A/AAAA records) and set
+`www.kotek.net` as a CNAME to `jankotek.github.io`. Enable *Enforce HTTPS* once the
+certificate is provisioned.
+
